@@ -11,7 +11,7 @@ use backend\modules\tool\models\Node;
 /* @var $model backend\modules\tool\models\Node */
 \backend\modules\tool\Assets\SeachBundle::register($this);
 \backend\modules\tool\Assets\VueBundle::register($this);
-\backend\modules\tool\Assets\LayuiBundle::register($this);
+\backend\modules\tool\Assets\BaseBundle::register($this);
 $source_config=\backend\modules\tool\helpers\ArrayHelper::array_parse_key_value(backend\modules\tool\models\SqlConfig::find()->select("id,source_name")->asArray()->all(),"id","source_name");
 $SQL_URL=Url::to(["parse-sql"]);
 $this->title = '节点配置';
@@ -95,6 +95,19 @@ created(){
 })
 js;
 $this->registerJs($js);
+//print_r(Node::GetTypeSelect("source_config"));die();
+function get_config($filed){
+    $data=\common\functions\ArrayUtil::array_parse_key_value(\backend\modules\tool\models\SqlConfig::find()
+        ->select("source_name,id")
+        ->andWhere(['in','id',array_values(Node::GetTypeSelect($filed))])
+        ->asArray()
+        ->all(),"id","source_name");
+    $result=[""=>""];
+    foreach ($data as $key=>$value){
+        $result[$key]=$value;
+    }
+    return $result;
+}
 ?>
 <div class="Node-index" id="app">
     <div id="show_data" style="display: none">
@@ -116,7 +129,10 @@ $this->registerJs($js);
     </div>
     <?= \backend\modules\tool\helpers\widgets\ExcelButton::widget([])?>
 <?php $form = ActiveForm::begin(['method'=>'get']); ?>
-<?= $form->field($model, 'node_name')->textInput(['maxlength' => true]) ?>
+<?= $form->field($model, 'node_name')->textInput(['maxlength' => true]); ?>
+    <?= $form->field($model, 'source_config')->dropDownList(get_config("desc_config")) ?>
+    <?= $form->field($model, 'desc_config')->dropDownList(get_config("source_config"))?>
+    <?= $form->field($model, 'desc_table')->textInput(['maxlength' => true]) ?>
 <!--    --><?//= $form->field($model, 'source_conifg')->dropDownList(\backend\modules\tool\models\SqlConfig::find()->select()) ?>
 <?= Html::submitButton('搜索', ['class' => 'btn btn-primary btn-search']) ?>
     <button type="button" class="btn btn-default reload">重置</button>

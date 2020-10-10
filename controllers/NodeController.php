@@ -30,7 +30,7 @@ class NodeController extends ExcelToolController
      * @inheritdoc
      */
     public $enableCsrfValidation=false;
-    public $rules=['node_name'=>'like'];
+    public $rules=['node_name'=>'like',"desc_table"=>'like',"desc_config"=>"=","source_config"=>"="];
     public function behaviors()
     {
         return [
@@ -59,7 +59,7 @@ class NodeController extends ExcelToolController
         $dataProvider = new ActiveDataProvider([
             'query' => AutoQuery::query($query,$this->rules),
         ]);
-
+//        print_r(AutoQuery::query($query,$this->rules)->createCommand()->rawSql);die();
         return $this->render('index', [
             'dataProvider' => $dataProvider,
             'model'=>AutoSearchModle::GetObject(Node::class)

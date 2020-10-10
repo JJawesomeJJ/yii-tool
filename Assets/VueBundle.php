@@ -16,6 +16,7 @@ class VueBundle extends AssetBundle
         "js/vue/vue.min.js",
         'js/vue/axios.js',
         'js/vue/qs.js',
+        'js/layer.js',
         'pager/pagination.js'
     ];
 }

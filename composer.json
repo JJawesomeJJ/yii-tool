@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "backend\\modules\\tool": ""
+            "backend\\modules\\tool\\": ""
         }
     }
 }
