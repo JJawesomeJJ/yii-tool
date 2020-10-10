@@ -1,0 +1,33 @@
+<?php
+
+{{propertys}}
+namespace {{namespace}}\models;
+
+class {{class}} extends \backend\modules\tool\models\BaseModel
+{
+    /**
+     * @inheritdoc
+     */
+    protected static $create_sql="{{create_sql}}";
+    public static function tableName()
+    {
+        return '{{%{{tablename}}}}';
+    }
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+{{rule}}
+        ];
+    }
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+{{attribute}}        ];
+    }
+}

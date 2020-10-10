@@ -1,0 +1,15 @@
+<?php
+
+/* @var $this yii\web\View */
+/* @var $model {{namespace}}\models\{{modelname}}  */
+
+$this->title = '更新{{title}}';
+?>
+<div class="{{modelname}}-update">
+
+    <?= $this->render('_form', [
+        'model' => $model,
+    ]) ?>
+
+</div>
+

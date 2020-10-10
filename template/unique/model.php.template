@@ -1,0 +1,41 @@
+<?php
+
+{{propertys}}
+namespace {{namespace}}\models;
+
+
+use backend\modules\tool\models\FillFormModel;
+
+class {{class}} extends FillFormModel
+{
+
+    public static $unique_template_key='{{template_key}}';
+    public static $is_unique={{is_unique}};
+    public static $primary_key='{{primary_key}}';
+    public $key='{{primary_key}}';
+    /**
+     * @inheritdoc
+     */
+{{fileds}}
+    public static function tableName()
+    {
+        return '{{%fill_form_tool}}';
+    }
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+{{rule}}
+        ];
+    }
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+{{attribute}}        ];
+    }
+}

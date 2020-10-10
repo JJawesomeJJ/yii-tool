@@ -1,0 +1,6 @@
+<?= \backend\modules\tool\helpers\widgets\ExcelButton::widget([])?>
+<?php $form = ActiveForm::begin(['method'=>'get']); ?>
+{{search_widget}}
+<?= Html::submitButton('搜索', ['class' => 'btn btn-primary btn-search']) ?>
+    <button type="button" class="btn btn-default reload">重置</button>
+<?php ActiveForm::end(); ?>

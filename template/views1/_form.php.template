@@ -1,0 +1,21 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model {{namespace}}\models\{{modelname}} */
+/* @var $form yii\widgets\ActiveForm */
+?>
+
+<div class="{{modelname}}-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+<?= $form->field($model, 'id')->hiddenInput()->label(false) ?>
+{{fileds_model}}
+    <div class="form-group">
+        <?= Html::submitButton('保存', ['class' => 'btn btn-success']) ?>
+    </div>
+    <?php ActiveForm::end(); ?>
+
+</div>

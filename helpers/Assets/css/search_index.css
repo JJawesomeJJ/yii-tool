@@ -1,0 +1,28 @@
+.btn-default{
+    font-size: 12px;
+    height: 30px;
+    margin-left: 10px;
+}
+#w0{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.btn-search{
+    font-size: 12px;
+    height: 30px;
+    margin-left: 10px;
+}
+.form-group{
+    display: flex;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+}
+.form-group label{
+    margin-right: 5px;
+    white-space: nowrap;
+}
+.input-group .date{
+    width: 200px !important;
+}

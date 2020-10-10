@@ -1,0 +1,26 @@
+<?php
+
+use yii\helpers\Html;
+use yii\helpers\Url;
+use dsj\components\grid\ResponsiveGridView;
+use yii\widgets\ActiveForm;
+use {{namespace}}\models\{{modelname}};
+
+/* @var $this yii\web\View */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $model {{namespace}}\models\{{modelname}} */
+\backend\modules\tool\Assets\SeachBundle::register($this);
+$this->title = '{{title}}';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="{{modelname}}-index">
+    {{search_widget}}
+    <?= ResponsiveGridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+{{fileds_list_string}}
+            ['class' => 'dsj\components\grid\ResponsiveActionColumn'],
+        ],
+    ]); ?>
+</div>

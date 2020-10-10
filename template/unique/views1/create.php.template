@@ -1,0 +1,14 @@
+<?php
+
+/* @var $this yii\web\View */
+/* @var $model {{namespace}}\models\{{modelname}} */
+
+$this->title = '创建{{title}}';
+?>
+<div class="{{modelname}}-create">
+
+    <?= $this->render('_form', [
+        'model' => $model,
+    ]) ?>
+
+</div>

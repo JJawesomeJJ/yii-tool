@@ -1,0 +1,22 @@
+<?php
+
+use yii\widgets\DetailView;
+
+/* @var $this yii\web\View */
+/* @var $model {{namespace}}\models\{{modelname}} */
+
+$this->title = '查看:' . $model->id;
+?>
+<div class="log-operate-view">
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+{{fileds_list_string}}
+        ],
+    ]) ?>
+
+</div>
+
+
+
