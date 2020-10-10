@@ -1,6 +1,10 @@
 {
     "name": "jjawesome/yii-tool",
     "description": "it is a yii fillform tool and middle table create tool that can fast and easy create a fillform page base on yii2 and it can product a api,the middleware tool can run many node,use sql both you can write php-programe,and the query is unbuffer,so do't care memory",
+    "keywords": ["yii2", "扩展", "组件", "上传"],
+    "homepage": "https://github.com/JJawesomeJJ/yii-tool",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "zhaolijie",
