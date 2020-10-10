@@ -7,5 +7,10 @@
             "email": "1293777844@qq.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "backend\\modules\\tool\\": "src"
+        }
+    }
 }
